@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+  </head>
+  <body>
+    <p id="para"></p>
+    <p id="para2"></p>
+    <p id="reverse"></p>
+    <div>
+      <button onclick="table()">Click to enter a number.</button>
+      <p id="table"></p>
+    </div>
+    <script>
+      // sum of numbers
+      let a = 0;
+      for (let b = 1; b < 11; b++) {
+        a = a + b;
+        document.getElementById("para").innerHTML =
+          "Sum of numbers from 1 to 10 : " + a;
+      }
+      // print even numbers
+      let c = "";
+      for (let d = 1; d < 21; d++) {
+        if (d % 2 == 0) {
+          c = c + d + "<br>";
+          document.getElementById("para2").innerHTML =
+            "Even numbers from 1 to 20" + "<br>" + c;
+        }
+      }
+      // reverse counting
+      let e = "";
+      for (let f = 10; f > 0; f--) {
+        e = e + f + "<br>";
+        document.getElementById("reverse").innerHTML =
+          "Reverse counting : " + "<br>" + e;
+      }
+      // Multiplication table
+      function table() {
+        let number = prompt("Please enter a number");
+        if (isNaN(number)) {
+          document.getElementById("table").innerHTML = "Please enter a number.";
+        } else {
+          let z = "";
+          for (let i = 1; i < 11; i++) {            
+            let y = number + " x " + i + " = " + number * i;
+            z = z + y + "<br>";
+            console.log(z);
+            document.getElementById("table").innerHTML =  z;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
